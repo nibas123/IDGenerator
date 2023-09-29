@@ -1,4 +1,6 @@
-﻿namespace IDGenerator.Forms
+﻿using IDGenerator.Enums;
+
+namespace IDGenerator.Forms
 {
     partial class GenerateID
     {
@@ -31,10 +33,10 @@
             this.button1 = new System.Windows.Forms.Button();
             this.generatedInstanceIdTextBox = new System.Windows.Forms.TextBox();
             this.idsize = new System.Windows.Forms.TextBox();
-            this.type = new System.Windows.Forms.GroupBox();
-            this.alphanum = new System.Windows.Forms.RadioButton();
+            this.idtype = new System.Windows.Forms.GroupBox();
             this.numeric = new System.Windows.Forms.RadioButton();
-            this.type.SuspendLayout();
+            this.alphanum = new System.Windows.Forms.RadioButton();
+            this.idtype.SuspendLayout();
             this.SuspendLayout();
             // 
             // button1
@@ -61,16 +63,27 @@
             this.idsize.Size = new System.Drawing.Size(86, 22);
             this.idsize.TabIndex = 2;
             // 
-            // type
+            // idtype
             // 
-            this.type.Controls.Add(this.numeric);
-            this.type.Controls.Add(this.alphanum);
-            this.type.Location = new System.Drawing.Point(447, 28);
-            this.type.Name = "type";
-            this.type.Size = new System.Drawing.Size(257, 58);
-            this.type.TabIndex = 3;
-            this.type.TabStop = false;
-            this.type.Text = "Type of ID";
+            this.idtype.Controls.Add(this.numeric);
+            this.idtype.Controls.Add(this.alphanum);
+            this.idtype.Location = new System.Drawing.Point(447, 28);
+            this.idtype.Name = "idtype";
+            this.idtype.Size = new System.Drawing.Size(257, 58);
+            this.idtype.TabIndex = 3;
+            this.idtype.TabStop = false;
+            this.idtype.Text = "Type of ID";
+            // 
+            // numeric
+            // 
+            this.numeric.AutoSize = true;
+            this.numeric.Location = new System.Drawing.Point(165, 21);
+            this.numeric.Name = "numeric";
+            this.numeric.Size = new System.Drawing.Size(78, 20);
+            this.numeric.TabIndex = 1;
+            this.numeric.TabStop = true;
+            this.numeric.Text = "Numeric";
+            this.numeric.UseVisualStyleBackColor = true;
             // 
             // alphanum
             // 
@@ -84,30 +97,19 @@
             this.alphanum.UseMnemonic = false;
             this.alphanum.UseVisualStyleBackColor = true;
             // 
-            // numeric
-            // 
-            this.numeric.AutoSize = true;
-            this.numeric.Location = new System.Drawing.Point(165, 21);
-            this.numeric.Name = "numeric";
-            this.numeric.Size = new System.Drawing.Size(78, 20);
-            this.numeric.TabIndex = 1;
-            this.numeric.TabStop = true;
-            this.numeric.Text = "Numeric";
-            this.numeric.UseVisualStyleBackColor = true;
-            // 
             // GenerateID
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 171);
-            this.Controls.Add(this.type);
+            this.Controls.Add(this.idtype);
             this.Controls.Add(this.idsize);
             this.Controls.Add(this.generatedInstanceIdTextBox);
             this.Controls.Add(this.button1);
             this.Name = "GenerateID";
             this.Text = "GenerateID";
-            this.type.ResumeLayout(false);
-            this.type.PerformLayout();
+            this.idtype.ResumeLayout(false);
+            this.idtype.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -118,7 +120,7 @@
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.TextBox generatedInstanceIdTextBox;
         private System.Windows.Forms.TextBox idsize;
-        private System.Windows.Forms.GroupBox type;
+        private System.Windows.Forms.GroupBox idtype;
         private System.Windows.Forms.RadioButton numeric;
         private System.Windows.Forms.RadioButton alphanum;
     }
