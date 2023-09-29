@@ -46,7 +46,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Dependencies\DateGeneratorProxy.cs" />
     <Compile Include="Dependencies\GuidGeneratorProxy.cs" />
+    <Compile Include="Dependencies\IDateGeneratorProxy.cs" />
     <Compile Include="Dependencies\IGuidGeneratorProxy.cs" />
     <Compile Include="Enums\IDType.cs" />
     <Compile Include="Forms\KafkaTools.cs">
@@ -81,6 +83,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Forms\GenerateDate.resx">
+      <DependentUpon>GenerateDate.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\GenerateGuid.resx">
       <DependentUpon>GenerateGuid.cs</DependentUpon>
     </EmbeddedResource>

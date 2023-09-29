@@ -1,4 +1,5 @@
-﻿using System;
+﻿using IDGenerator.Dependencies;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -15,6 +16,21 @@ namespace IDGenerator.Forms
         public GenerateDate()
         {
             InitializeComponent();
+
+            dateTimePicker.Format = DateTimePickerFormat.Custom;
+            dateTimePicker.CustomFormat = "ddd dd MMM yyyy:hh mm sss";
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            DateGeneratorProxy FormatDateproxy = new DateGeneratorProxy();
+            
+            DateTime selectedDateTime = dateTimePicker.Value;
+            string formattedDate = FormatDateproxy.FormatDate(selectedDateTime);
+            formattedDateTextBox.Text = formattedDate;
+            Clipboard.SetText(formattedDate);
+            clipalert.Text = "Copied to Clipboard";
         }
     }
 }
