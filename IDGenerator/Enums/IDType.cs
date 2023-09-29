@@ -8,7 +8,11 @@ namespace IDGenerator.Enums
 {
     internal enum IDType
     {
-        Alphanumeric = 1,
-        Numeric=2
+        CapsAlphanumeric = 1,
+        Numeric=2,
+        SmallAlpha=3,
+        Mixed=4, 
+        MixedAlpha=5,
+        
     }
 }

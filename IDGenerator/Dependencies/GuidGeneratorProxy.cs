@@ -24,14 +24,27 @@ namespace IDGenerator.Dependencies
             }
             Random random = new Random();
             {
-                if (type == (int)IDType.Alphanumeric)
+                if (type == (int)IDType.CapsAlphanumeric)
                 {
-                    characters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
+                    characters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ01234565000789864584658645";
                 }
                 else if (type == (int)IDType.Numeric)
                 {
-                    characters = "0123456789";
+                    characters = "0123456789645684148144164116186181446540000544600061668798465132978645";
                 }
+                else if (type == (int)IDType.SmallAlpha)
+                {
+                    characters = "abcdefghijklmnopqrstuvwxyz12345678998745632147852369753951486200";
+                }
+                else if (type == (int)IDType.Mixed)
+                {
+                    characters = "abcdefghijklmnopqrstuvwxyz123456789987456ABCDEFGHIJKLMNOPQRSTUVWXYZ32147852369753951486200";
+                }
+                else if (type == (int)IDType.MixedAlpha)
+                {
+                    characters = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
+                }
+
 
                 char[] instanceIdChars = new char[length];
                 for (int i = 0; i < length; i++)

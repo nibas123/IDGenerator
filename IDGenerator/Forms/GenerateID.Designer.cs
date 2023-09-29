@@ -34,6 +34,10 @@ namespace IDGenerator.Forms
             this.generatedInstanceIdTextBox = new System.Windows.Forms.TextBox();
             this.idsize = new System.Windows.Forms.TextBox();
             this.idtype = new System.Windows.Forms.GroupBox();
+            this.alpha = new System.Windows.Forms.RadioButton();
+            this.lcase = new System.Windows.Forms.RadioButton();
+            this.Ucase = new System.Windows.Forms.RadioButton();
+            this.mixed = new System.Windows.Forms.RadioButton();
             this.numeric = new System.Windows.Forms.RadioButton();
             this.alphanum = new System.Windows.Forms.RadioButton();
             this.label1 = new System.Windows.Forms.Label();
@@ -55,7 +59,7 @@ namespace IDGenerator.Forms
             // generatedInstanceIdTextBox
             // 
             this.generatedInstanceIdTextBox.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.generatedInstanceIdTextBox.Location = new System.Drawing.Point(190, 119);
+            this.generatedInstanceIdTextBox.Location = new System.Drawing.Point(201, 177);
             this.generatedInstanceIdTextBox.Name = "generatedInstanceIdTextBox";
             this.generatedInstanceIdTextBox.Size = new System.Drawing.Size(312, 30);
             this.generatedInstanceIdTextBox.TabIndex = 1;
@@ -69,19 +73,68 @@ namespace IDGenerator.Forms
             // 
             // idtype
             // 
+            this.idtype.Controls.Add(this.alpha);
+            this.idtype.Controls.Add(this.lcase);
+            this.idtype.Controls.Add(this.Ucase);
+            this.idtype.Controls.Add(this.mixed);
             this.idtype.Controls.Add(this.numeric);
             this.idtype.Controls.Add(this.alphanum);
-            this.idtype.Location = new System.Drawing.Point(447, 40);
+            this.idtype.Location = new System.Drawing.Point(15, 97);
             this.idtype.Name = "idtype";
-            this.idtype.Size = new System.Drawing.Size(257, 58);
+            this.idtype.Size = new System.Drawing.Size(763, 58);
             this.idtype.TabIndex = 3;
             this.idtype.TabStop = false;
             this.idtype.Text = "Type of ID";
             // 
+            // alpha
+            // 
+            this.alpha.AutoSize = true;
+            this.alpha.Location = new System.Drawing.Point(643, 21);
+            this.alpha.Name = "alpha";
+            this.alpha.Size = new System.Drawing.Size(112, 20);
+            this.alpha.TabIndex = 5;
+            this.alpha.TabStop = true;
+            this.alpha.Text = "Alphabet Only";
+            this.alpha.UseVisualStyleBackColor = true;
+            // 
+            // lcase
+            // 
+            this.lcase.AutoSize = true;
+            this.lcase.Location = new System.Drawing.Point(533, 21);
+            this.lcase.Name = "lcase";
+            this.lcase.Size = new System.Drawing.Size(94, 20);
+            this.lcase.TabIndex = 4;
+            this.lcase.TabStop = true;
+            this.lcase.Text = "Lowercase";
+            this.lcase.UseVisualStyleBackColor = true;
+            this.lcase.CheckedChanged += new System.EventHandler(this.radioButton3_CheckedChanged);
+            // 
+            // Ucase
+            // 
+            this.Ucase.AutoSize = true;
+            this.Ucase.Location = new System.Drawing.Point(403, 21);
+            this.Ucase.Name = "Ucase";
+            this.Ucase.Size = new System.Drawing.Size(96, 20);
+            this.Ucase.TabIndex = 3;
+            this.Ucase.TabStop = true;
+            this.Ucase.Text = "Uppercase";
+            this.Ucase.UseVisualStyleBackColor = true;
+            // 
+            // mixed
+            // 
+            this.mixed.AutoSize = true;
+            this.mixed.Location = new System.Drawing.Point(282, 21);
+            this.mixed.Name = "mixed";
+            this.mixed.Size = new System.Drawing.Size(67, 20);
+            this.mixed.TabIndex = 2;
+            this.mixed.TabStop = true;
+            this.mixed.Text = "Mixed ";
+            this.mixed.UseVisualStyleBackColor = true;
+            // 
             // numeric
             // 
             this.numeric.AutoSize = true;
-            this.numeric.Location = new System.Drawing.Point(165, 21);
+            this.numeric.Location = new System.Drawing.Point(161, 21);
             this.numeric.Name = "numeric";
             this.numeric.Size = new System.Drawing.Size(78, 20);
             this.numeric.TabIndex = 1;
@@ -132,7 +185,7 @@ namespace IDGenerator.Forms
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 171);
+            this.ClientSize = new System.Drawing.Size(800, 238);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.clipalert);
             this.Controls.Add(this.label1);
@@ -160,5 +213,9 @@ namespace IDGenerator.Forms
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label clipalert;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.RadioButton alpha;
+        private System.Windows.Forms.RadioButton lcase;
+        private System.Windows.Forms.RadioButton Ucase;
+        private System.Windows.Forms.RadioButton mixed;
     }
 }

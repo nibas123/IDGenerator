@@ -7,6 +7,7 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Text.Json;
+using System.Text.Json.Nodes;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
@@ -39,18 +40,19 @@ namespace IDGenerator.Forms
         private void kafakdata_Click(object sender, EventArgs e)
         {
             Guid guidk = Guid.NewGuid();
-            //var jsonObject = new
-            //{
-            //    "x-paymenthub-correlation-id" : "+ guidk.ToString();
-            //};
 
-            // Serialize the anonymous object to JSON
-            string jsonString = System.Text.Json.JsonSerializer.Serialize(jsonObject, new JsonSerializerOptions
+            var jsonObject = new Dictionary<string, object>
             {
-                WriteIndented = true // Enable pretty printing
-            }); 
+                { "x-paymenthub-correlation-id", guidk.ToString() }
+            };
+
+            string jsonString = JsonConvert.SerializeObject(jsonObject, Formatting.Indented);
+            
+
             richTextBox1.Text = jsonString;
+
             Clipboard.SetText(jsonString);
+
             cpy.Text = "Copied to clipboard";
         }
     }
