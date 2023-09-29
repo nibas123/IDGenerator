@@ -33,6 +33,9 @@
             this.clipboardconf = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
+            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
+            this.kafakdata = new System.Windows.Forms.Button();
+            this.cpy = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // generatedGuidTextBox
@@ -83,11 +86,40 @@
             this.label2.Text = "HOME";
             this.label2.Click += new System.EventHandler(this.label1_Click);
             // 
+            // richTextBox1
+            // 
+            this.richTextBox1.Location = new System.Drawing.Point(60, 214);
+            this.richTextBox1.Name = "richTextBox1";
+            this.richTextBox1.Size = new System.Drawing.Size(575, 82);
+            this.richTextBox1.TabIndex = 5;
+            this.richTextBox1.Text = "";
+            // 
+            // kafakdata
+            // 
+            this.kafakdata.Location = new System.Drawing.Point(289, 314);
+            this.kafakdata.Name = "kafakdata";
+            this.kafakdata.Size = new System.Drawing.Size(135, 45);
+            this.kafakdata.TabIndex = 6;
+            this.kafakdata.Text = "Generate New";
+            this.kafakdata.UseVisualStyleBackColor = true;
+            this.kafakdata.Click += new System.EventHandler(this.kafakdata_Click);
+            // 
+            // cpy
+            // 
+            this.cpy.AutoSize = true;
+            this.cpy.Location = new System.Drawing.Point(57, 299);
+            this.cpy.Name = "cpy";
+            this.cpy.Size = new System.Drawing.Size(0, 16);
+            this.cpy.TabIndex = 7;
+            // 
             // GenerateGuid
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(704, 220);
+            this.ClientSize = new System.Drawing.Size(704, 371);
+            this.Controls.Add(this.cpy);
+            this.Controls.Add(this.kafakdata);
+            this.Controls.Add(this.richTextBox1);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.clipboardconf);
@@ -107,5 +139,8 @@
         private System.Windows.Forms.Label clipboardconf;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.RichTextBox richTextBox1;
+        private System.Windows.Forms.Button kafakdata;
+        private System.Windows.Forms.Label cpy;
     }
 }

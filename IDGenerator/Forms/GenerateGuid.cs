@@ -1,12 +1,15 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Text.Json;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace IDGenerator.Forms
 {
@@ -31,6 +34,24 @@ namespace IDGenerator.Forms
             var guidform = new GenerateGuid();
             guidform.Dispose();
             homeform.Show();
+        }
+
+        private void kafakdata_Click(object sender, EventArgs e)
+        {
+            Guid guidk = Guid.NewGuid();
+            //var jsonObject = new
+            //{
+            //    "x-paymenthub-correlation-id" : "+ guidk.ToString();
+            //};
+
+            // Serialize the anonymous object to JSON
+            string jsonString = System.Text.Json.JsonSerializer.Serialize(jsonObject, new JsonSerializerOptions
+            {
+                WriteIndented = true // Enable pretty printing
+            }); 
+            richTextBox1.Text = jsonString;
+            Clipboard.SetText(jsonString);
+            cpy.Text = "Copied to clipboard";
         }
     }
 }
