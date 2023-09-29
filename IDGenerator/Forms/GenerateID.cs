@@ -50,6 +50,8 @@ namespace IDGenerator.Forms
             {
                 string instanceId = Instanceidgen.GenerateInstanceId(desiredLength, selectedRadioButtonText);
                 generatedInstanceIdTextBox.Text = instanceId;
+                Clipboard.SetText(instanceId);
+                clipalert.Text = "Copied to Clipboard";
             }
             else
             {
