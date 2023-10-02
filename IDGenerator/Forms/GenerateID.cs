@@ -26,14 +26,23 @@ namespace IDGenerator.Forms
 
         public int GetSelectedRadioButtonText()
         {
-            int selectedValue =(int) IDType.Alphanumeric;
-            if (alphanum.Checked)
-            {
-                selectedValue = (int)IDType.Alphanumeric;
-            }
-            else if (numeric.Checked)
+            int selectedValue =(int) IDType.Mixed;
+
+            if (numeric.Checked)
             {
                 selectedValue = (int)IDType.Numeric;
+            }
+            else if (alphanum.Checked)
+            {
+                selectedValue = (int)IDType.MixedAlpha;
+            }
+            else if (Ucase.Checked)
+            {
+                selectedValue = (int)IDType.CapsAlphanumeric;
+            }
+            else if (lcase.Checked)
+            {
+                selectedValue = (int)IDType.SmallAlpha;
             }
             return selectedValue;
 
@@ -59,6 +68,15 @@ namespace IDGenerator.Forms
             }
         }
 
-      }
+        private void radioButton3_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void alphanum_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
+    }
     
 }

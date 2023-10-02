@@ -34,6 +34,9 @@ namespace IDGenerator.Forms
             this.generatedInstanceIdTextBox = new System.Windows.Forms.TextBox();
             this.idsize = new System.Windows.Forms.TextBox();
             this.idtype = new System.Windows.Forms.GroupBox();
+            this.lcase = new System.Windows.Forms.RadioButton();
+            this.Ucase = new System.Windows.Forms.RadioButton();
+            this.mixed = new System.Windows.Forms.RadioButton();
             this.numeric = new System.Windows.Forms.RadioButton();
             this.alphanum = new System.Windows.Forms.RadioButton();
             this.label1 = new System.Windows.Forms.Label();
@@ -44,7 +47,7 @@ namespace IDGenerator.Forms
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(176, 58);
+            this.button1.Location = new System.Drawing.Point(148, 58);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(253, 23);
             this.button1.TabIndex = 0;
@@ -55,7 +58,7 @@ namespace IDGenerator.Forms
             // generatedInstanceIdTextBox
             // 
             this.generatedInstanceIdTextBox.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.generatedInstanceIdTextBox.Location = new System.Drawing.Point(190, 119);
+            this.generatedInstanceIdTextBox.Location = new System.Drawing.Point(148, 177);
             this.generatedInstanceIdTextBox.Name = "generatedInstanceIdTextBox";
             this.generatedInstanceIdTextBox.Size = new System.Drawing.Size(312, 30);
             this.generatedInstanceIdTextBox.TabIndex = 1;
@@ -64,24 +67,61 @@ namespace IDGenerator.Forms
             // 
             this.idsize.Location = new System.Drawing.Point(117, 59);
             this.idsize.Name = "idsize";
-            this.idsize.Size = new System.Drawing.Size(53, 22);
+            this.idsize.Size = new System.Drawing.Size(25, 22);
             this.idsize.TabIndex = 2;
             // 
             // idtype
             // 
+            this.idtype.Controls.Add(this.lcase);
+            this.idtype.Controls.Add(this.Ucase);
+            this.idtype.Controls.Add(this.mixed);
             this.idtype.Controls.Add(this.numeric);
             this.idtype.Controls.Add(this.alphanum);
-            this.idtype.Location = new System.Drawing.Point(447, 40);
+            this.idtype.Location = new System.Drawing.Point(15, 97);
             this.idtype.Name = "idtype";
-            this.idtype.Size = new System.Drawing.Size(257, 58);
+            this.idtype.Size = new System.Drawing.Size(635, 58);
             this.idtype.TabIndex = 3;
             this.idtype.TabStop = false;
             this.idtype.Text = "Type of ID";
             // 
+            // lcase
+            // 
+            this.lcase.AutoSize = true;
+            this.lcase.Location = new System.Drawing.Point(378, 21);
+            this.lcase.Name = "lcase";
+            this.lcase.Size = new System.Drawing.Size(94, 20);
+            this.lcase.TabIndex = 4;
+            this.lcase.TabStop = true;
+            this.lcase.Text = "Lowercase";
+            this.lcase.UseVisualStyleBackColor = true;
+            this.lcase.CheckedChanged += new System.EventHandler(this.radioButton3_CheckedChanged);
+            // 
+            // Ucase
+            // 
+            this.Ucase.AutoSize = true;
+            this.Ucase.Location = new System.Drawing.Point(255, 21);
+            this.Ucase.Name = "Ucase";
+            this.Ucase.Size = new System.Drawing.Size(96, 20);
+            this.Ucase.TabIndex = 3;
+            this.Ucase.TabStop = true;
+            this.Ucase.Text = "Uppercase";
+            this.Ucase.UseVisualStyleBackColor = true;
+            // 
+            // mixed
+            // 
+            this.mixed.AutoSize = true;
+            this.mixed.Location = new System.Drawing.Point(15, 21);
+            this.mixed.Name = "mixed";
+            this.mixed.Size = new System.Drawing.Size(117, 20);
+            this.mixed.TabIndex = 2;
+            this.mixed.TabStop = true;
+            this.mixed.Text = "Alpha-Numeric";
+            this.mixed.UseVisualStyleBackColor = true;
+            // 
             // numeric
             // 
             this.numeric.AutoSize = true;
-            this.numeric.Location = new System.Drawing.Point(165, 21);
+            this.numeric.Location = new System.Drawing.Point(147, 21);
             this.numeric.Name = "numeric";
             this.numeric.Size = new System.Drawing.Size(78, 20);
             this.numeric.TabIndex = 1;
@@ -92,14 +132,15 @@ namespace IDGenerator.Forms
             // alphanum
             // 
             this.alphanum.AutoSize = true;
-            this.alphanum.Location = new System.Drawing.Point(21, 21);
+            this.alphanum.Location = new System.Drawing.Point(493, 21);
             this.alphanum.Name = "alphanum";
-            this.alphanum.Size = new System.Drawing.Size(116, 20);
+            this.alphanum.Size = new System.Drawing.Size(136, 20);
             this.alphanum.TabIndex = 0;
             this.alphanum.TabStop = true;
-            this.alphanum.Text = "Alpha Numeric";
+            this.alphanum.Text = "Mixed Alpahabets";
             this.alphanum.UseMnemonic = false;
             this.alphanum.UseVisualStyleBackColor = true;
+            this.alphanum.CheckedChanged += new System.EventHandler(this.alphanum_CheckedChanged);
             // 
             // label1
             // 
@@ -132,7 +173,7 @@ namespace IDGenerator.Forms
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 171);
+            this.ClientSize = new System.Drawing.Size(667, 238);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.clipalert);
             this.Controls.Add(this.label1);
@@ -160,5 +201,8 @@ namespace IDGenerator.Forms
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label clipalert;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.RadioButton lcase;
+        private System.Windows.Forms.RadioButton Ucase;
+        private System.Windows.Forms.RadioButton mixed;
     }
 }
