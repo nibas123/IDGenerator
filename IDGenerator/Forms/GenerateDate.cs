@@ -32,5 +32,10 @@ namespace IDGenerator.Forms
             Clipboard.SetText(formattedDate);
             clipalert.Text = "Copied to Clipboard";
         }
+
+        private void GenerateDate_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

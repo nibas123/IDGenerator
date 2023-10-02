@@ -26,7 +26,7 @@ namespace IDGenerator.Dependencies
             {
                 if (type == (int)IDType.CapsAlphanumeric)
                 {
-                    characters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ01234565000789864584658645";
+                    characters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
                 }
                 else if (type == (int)IDType.Numeric)
                 {
@@ -34,7 +34,7 @@ namespace IDGenerator.Dependencies
                 }
                 else if (type == (int)IDType.SmallAlpha)
                 {
-                    characters = "abcdefghijklmnopqrstuvwxyz12345678998745632147852369753951486200";
+                    characters = "abcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyz";
                 }
                 else if (type == (int)IDType.Mixed)
                 {
